@@ -2,7 +2,7 @@
 
 Tools to maintain and improve AGENTS.md files - audit quality, capture session learnings, and keep project memory current.
 
-`CLAUDE.md` is treated only as a compatibility bridge for Claude Code (typically an `@AGENTS.md` pointer or a symlink to `AGENTS.md`). This plugin never writes to CLAUDE.md — AGENTS.md is always the canonical file.
+`CLAUDE.md` is treated only as a compatibility bridge (typically an `@AGENTS.md` pointer or a symlink to `AGENTS.md`). This plugin never writes to CLAUDE.md — AGENTS.md is always the canonical file.
 
 ## What It Does
 
@@ -39,4 +39,4 @@ Captures learnings from the current session:
 
 ## Author
 
-Isabella He (isabella@anthropic.com)
+Zeroone Team

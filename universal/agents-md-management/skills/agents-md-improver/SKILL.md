@@ -10,7 +10,7 @@ Audit, evaluate, and improve AGENTS.md files across a codebase to ensure agentic
 
 **This skill can write to AGENTS.md files.** After presenting a quality report and getting user approval, it updates AGENTS.md files with targeted improvements.
 
-**CLAUDE.md is never edited by this skill.** In this ecosystem, `CLAUDE.md` exists only as a compatibility bridge for Claude Code — it typically contains `@AGENTS.md` or otherwise points at AGENTS.md. AGENTS.md is always the canonical, operational memory file.
+**CLAUDE.md is never edited by this skill.** `CLAUDE.md` exists only as a compatibility bridge for Claude Code and other compatible tools — it typically contains `@AGENTS.md` or otherwise points at AGENTS.md. AGENTS.md is always the canonical, operational memory file.
 
 ## Workflow
 
@@ -42,7 +42,7 @@ For each `CLAUDE.md` found:
 - If it's a symlink to `AGENTS.md`, resolve it and treat the target `AGENTS.md` as the file to audit/edit — still edit through the real path, not the symlink.
 - If a `CLAUDE.md` exists with no pointer to AGENTS.md at all, flag it in the report as "bridge missing" — a note for the user to fix, not something this skill fixes automatically.
 
-**Note on multi-tool memory files:** Claude Code also has its own global preference file (`~/.claude/CLAUDE.md`) for user-wide settings unrelated to any single project. That file is Claude Code's own configuration mechanism, not a project AGENTS.md, and is out of scope for this skill.
+**Note on multi-tool memory files:** Claude Code and some compatible tools also have their own global preference file (`~/.claude/CLAUDE.md`) for user-wide settings unrelated to any single project. That file is a tool-specific configuration mechanism, not a project AGENTS.md, and is out of scope for this skill.
 
 ### Phase 2: Quality Assessment
 
@@ -170,11 +170,11 @@ See [references/templates.md](references/templates.md) for AGENTS.md templates b
 
 When presenting recommendations, remind users:
 
-- **`#` key shortcut**: During a Claude Code session, pressing `#` auto-captures a learning — if the project's `CLAUDE.md` is just a pointer (`@AGENTS.md`), make sure the captured note lands in AGENTS.md, not duplicated into the bridge file.
+- **`#` key shortcut**: In Claude Code (and some compatible tools), pressing `#` auto-captures a learning — if the project's `CLAUDE.md` is just a pointer (`@AGENTS.md`), make sure the captured note lands in AGENTS.md, not duplicated into the bridge file.
 - **Keep it concise**: AGENTS.md should be human-readable; dense is better than verbose
 - **Actionable commands**: All documented commands should be copy-paste ready
 - **Use `AGENTS.local.md`**: For personal preferences not shared with team (add to `.gitignore`)
-- **Claude Code global defaults**: User-wide Claude Code preferences (not project memory) still live in `~/.claude/CLAUDE.md` — that's a separate mechanism from project AGENTS.md files
+- **Global defaults in compatible tools**: User-wide preferences in tools that use CLAUDE.md (not project memory) still live in `~/.claude/CLAUDE.md` — that's a separate mechanism from project AGENTS.md files
 
 ## What Makes a Great AGENTS.md
 

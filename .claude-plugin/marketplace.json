@@ -1,0 +1,15 @@
+{
+  "name": "zeroone-marketplace",
+  "owner": {
+    "name": "Felipe Nogueira"
+  },
+  "description": "Marketplace pessoal com plugins, skills e MCPs customizados para o ecossistema Zeroone.gg, com foco em compatibilidade multi-CLI (Grok, Claude Code, Codex, AGY e similares).",
+  "plugins": [
+    {
+      "name": "agents-md-management",
+      "source": "./universal/agents-md-management",
+      "description": "Ferramentas para manter e melhorar arquivos AGENTS.md (com suporte a ponte de compatibilidade para CLAUDE.md em ferramentas que o utilizam).",
+      "version": "1.0.0"
+    }
+  ]
+}

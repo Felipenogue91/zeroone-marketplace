@@ -20,7 +20,7 @@ What context was missing that would have helped the agent work more effectively?
 find . -name "AGENTS.md" -o -name "AGENTS.local.md" 2>/dev/null | head -20
 ```
 
-Also check whether a `CLAUDE.md` bridge file exists for Claude Code:
+Also check whether a `CLAUDE.md` bridge file exists for Claude Code or compatible tools:
 
 ```bash
 find . -name "CLAUDE.md" 2>/dev/null | head -20

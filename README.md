@@ -8,6 +8,8 @@ Repositório pessoal de plugins, skills e MCPs customizados para o ecossistema Z
 
 ## Como adicionar este marketplace
 
+Este repositório segue o formato oficial de marketplace (`.claude-plugin/marketplace.json` na raiz).
+
 ### Grok Build
 
 ```bash
@@ -34,6 +36,8 @@ Ou pela TUI:
 
 A maioria suporta adicionar via git ou caminho local apontando para este repositório.
 
+**Dica**: Após adicionar, rode `/plugin marketplace update` para atualizar.
+
 ## Categorias de Plugins
 
 ```
@@ -49,7 +53,40 @@ zeroone-marketplace/
 ## Plugins atuais
 
 ### Universal
-- **agents-md-management** — Versão customizada focada em AGENTS.md (CLAUDE.md tratado apenas como ponte de compatibilidade).
+- **agents-md-management** — Ferramentas para manter e melhorar AGENTS.md (com suporte a ponte de compatibilidade para CLAUDE.md).
+
+## Estrutura do Marketplace
+
+O repositório segue o formato oficial:
+
+```
+zeroone-marketplace/
+├── .claude-plugin/
+│   └── marketplace.json     # Catálogo do marketplace
+├── universal/               # Plugins que funcionam em múltiplos CLIs
+│   └── agents-md-management/
+├── grok/                    # Plugins otimizados para Grok
+├── claude-code/             # Plugins específicos para Claude Code
+├── template/                # Template para novos plugins
+└── README.md
+```
+
+### Exemplo de marketplace.json
+
+```json
+{
+  "name": "zeroone-marketplace",
+  "owner": { "name": "Felipe Nogueira" },
+  "plugins": [
+    {
+      "name": "agents-md-management",
+      "source": "./universal/agents-md-management",
+      "description": "...",
+      "version": "1.0.0"
+    }
+  ]
+}
+```
 
 ## Estrutura de cada plugin
 
