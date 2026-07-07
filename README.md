@@ -1,10 +1,12 @@
 # zeroone-marketplace
 
-Personal marketplace with custom plugins, skills, and MCPs for Zeroone.gg.
+Repositório pessoal de plugins, skills e MCPs customizados para o ecossistema Zeroone.gg.
 
-This repo is meant to be added as a marketplace source in Grok Build, Claude Code, and compatible tools.
+**Filosofia**: 
+- Plugins **universais** que funcionam em múltiplos CLIs (Grok Build, Claude Code, Codex, Antigravity/AGY etc.)
+- Plugins **específicos** otimizados para uma ferramenta em particular quando necessário.
 
-## How to add this marketplace
+## Como adicionar este marketplace
 
 ### Grok Build
 
@@ -12,14 +14,14 @@ This repo is meant to be added as a marketplace source in Grok Build, Claude Cod
 grok plugin marketplace add Felipenogue91/zeroone-marketplace
 ```
 
-Then install plugins:
+Depois instale os plugins:
 
 ```bash
 grok plugin install agents-md-management --trust
 ```
 
-Or use the TUI:
-- `/plugins` → Marketplace tab → `a` to add → `Felipenogue91/zeroone-marketplace`
+Ou pela TUI:
+- `/plugins` → aba Marketplace → `a` → `Felipenogue91/zeroone-marketplace`
 
 ### Claude Code
 
@@ -28,13 +30,28 @@ Or use the TUI:
 /plugin install agents-md-management
 ```
 
-## Plugins included
+### Outras ferramentas (Codex, AGY, etc.)
 
-- `agents-md-management` — Custom version focused on maintaining AGENTS.md (with CLAUDE.md treated only as compatibility bridge).
+A maioria suporta adicionar via git ou caminho local apontando para este repositório.
 
-## Structure
+## Categorias de Plugins
 
-Each plugin follows the standard format:
+```
+zeroone-marketplace/
+├── universal/          # Funcionam em múltiplos CLIs
+├── grok/               # Otimizados para Grok Build
+├── claude-code/        # Mais específicos para Claude Code
+├── codex/              # Específicos para Codex
+├── agy/                # Específicos para Antigravity
+└── mcps/               # Servidores MCP (geralmente mais portáteis)
+```
+
+## Plugins atuais
+
+### Universal
+- **agents-md-management** — Versão customizada focada em AGENTS.md (CLAUDE.md tratado apenas como ponte de compatibilidade).
+
+## Estrutura de cada plugin
 
 ```
 plugin-name/
@@ -44,10 +61,29 @@ plugin-name/
 │   └── skill-name/
 │       └── SKILL.md
 ├── commands/
-│   └── some-command.md
-└── README.md
+│   └── meu-comando.md
+├── README.md
+└── (opcional) .mcp.json
 ```
 
-## Contributing / Using
+## Como contribuir / adicionar novo plugin
 
-Feel free to use these in your own setups. If you want to fork or suggest improvements, open an issue or PR.
+1. Escolha a categoria certa (`universal/` é preferível quando possível).
+2. Copie a estrutura do template em `template/`.
+3. Crie um bom `README.md` dentro do plugin explicando:
+   - O que faz
+   - Quais CLIs são suportados
+   - Como usar
+4. Atualize este README principal.
+5. Abra PR ou envie o commit.
+
+## Notas de Compatibilidade
+
+- **Skills puras** (SKILL.md) são as mais portáteis entre Grok, Claude Code, Codex e AGY.
+- Hooks complexos e agentes específicos geralmente funcionam melhor em um CLI só.
+- MCPs costumam ser mais independentes da ferramenta.
+- Sempre declare a compatibilidade no README do plugin.
+
+## Licença
+
+Uso livre para projetos pessoais e da equipe Zeroone.
